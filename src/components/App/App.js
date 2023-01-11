@@ -1,15 +1,30 @@
 import './App.css';
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Routes, Route } from "react-router-dom"
 import Deck from '../Deck/Deck';
+import fetchData from '../../apiCalls';
+import Home from '../Home/Home';
 
-function App() {
+const App = () => {
+  const [questions, setQuestions] = useState([])
+
+
+  const getData = () => {
+    fetchData()
+      .then(data => setQuestions(data))
+  }
+
+  useEffect(() => {
+    getData()
+    // console.log('DATA', questions)
+  })
+
   return (
     <div className="App">
       <h1>We're Not Really Strangers</h1>
       <Routes>
-        <Route path="/" element={< Deck />} />
-        <Route />
+        <Route path="/" element={< Home questions={questions} />} />
+        <Route path="/:id" element={< Deck  />}/>
       </Routes>
     </div>
   );
