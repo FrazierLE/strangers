@@ -1,12 +1,12 @@
 import React from 'react'
 import './Home.css'
 import { NavLink } from 'react-router-dom'
-import LevelOne from '../LevelOne/LevelOne'
+
 
 const Home = (props) => {
   return (
     <div className='levels'>
-      <NavLink to='/one' className='navLink'>
+      <NavLink to='/one' className='navLink' >
         <div className='level-one home-card' onClick={() => props.one()}>
           <h3>Level 1</h3>
           <span>Perception</span>

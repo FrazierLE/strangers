@@ -1,8 +1,10 @@
 import React from 'react'
 
-const LevelOne = () => {
+const LevelOne = (question) => {
+  console.log('LEVEL ONE', question)
+
   return (
-    <h4>Level One</h4>
+    <h4>here</h4>
   )
 }
 
