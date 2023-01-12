@@ -51,6 +51,11 @@ const App = () => {
     setFavorites([...favorites, question])
   }
 
+  const deleteFromFavorites = (id) => {
+    const filteredFavorites = favorites.filter(card => card.id !== id)
+    setFavorites(filteredFavorites)
+  }
+
   return (
     <div className="App">
       < NavBar />
@@ -60,7 +65,7 @@ const App = () => {
         <Route path="/one" element={< Level level={level} randomQuestion={randomQuestion} one={one} addToFavorites={addToFavorites}/>}/>
         <Route path="/two" element={< Level level={level} randomQuestion={randomQuestion} two={two} addToFavorites={addToFavorites}/>}/>
         <Route path="/three" element={< Level level={level} randomQuestion={randomQuestion} three={three} addToFavorites={addToFavorites}/>}/>
-        <Route path="/favorites" element={<Favorites favorites={favorites}/>} />
+        <Route path="/favorites" element={<Favorites favorites={favorites} deleteFromFavorites={deleteFromFavorites}/>} />
       </Routes>
     </div>
   );
