@@ -18,7 +18,7 @@
   height: 36rem;
 }
 
-button {
+.level-button {
   height: 2.5rem;
   width: 6rem;
   color: whitesmoke;
@@ -27,7 +27,7 @@ button {
   border: none;
 }
 
-button:hover {
+.level-button:hover {
   opacity: .75;
   cursor: pointer;
 }
