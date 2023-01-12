@@ -10,6 +10,9 @@ import LevelThree from '../LevelThree/LevelThree'
 const App = () => {
   const [questions, setQuestions] = useState([])
   const [randomQuestion, setRandomQuestion] = useState('')
+  let perception = [];
+  let connection = [];
+  let reflection = [];
 
   const getData = () => {
     fetchData()
@@ -18,36 +21,55 @@ const App = () => {
 
   useEffect(() => {
     getData()
-  })
+  }, [])
 
   const generateRandomQuestion = (level) => {
     const q = level[Math.floor(Math.random()*level.length)];
-    setRandomQuestion(q.question)
+    console.log('QU', q)
+    setRandomQuestion(q)
   }
 
   const one = () => {
-    const perception = questions.filter(question => question.level === 1)
+    perception = questions.filter(question => question.level === 1)
     generateRandomQuestion(perception)
   }
 
   const two = () => {
-    const connection = questions.filter(question => question.level === 2)
+    connection = questions.filter(question => question.level === 2)
     generateRandomQuestion(connection)
   }
 
   const three = () => {
-    const reflection = questions.filter(question => question.level === 3)
+    reflection = questions.filter(question => question.level === 3)
     generateRandomQuestion(reflection)
   }
+
+  // const filterLevel = () => {
+  //   const level = questions.map(question => {
+  //     console.log('QUESTION', question)
+  //     if(question.level === 1) {
+  //       perception.push(question)
+  //     }
+  //     else if(question.level === 2) {
+  //       connection.push(question)
+  //     }
+  //     else if(question.level === 3) {
+  //       return question
+  //     }
+  //   })
+  //   generateRandomQuestion(perception)
+  //   generateRandomQuestion(connection)
+  //   generateRandomQuestion(reflection)
+  // }
 
   return (
     <div className="App">
       <h1>We're Not Really Strangers</h1>
       <Routes>
         <Route path="/" element={< Home one={one} two={two} three={three}/>} />
-        <Route path="/one" element={< LevelOne randomQuestion={randomQuestion}/>}/>
-        <Route path="/two" element={< LevelTwo randomQuestion={randomQuestion}/>}/>
-        <Route path="/three" element={< LevelThree randomQuestion={randomQuestion}/>}/>
+        <Route path="/one" element={< LevelOne randomQuestion={randomQuestion} one={one}/>}/>
+        <Route path="/two" element={< LevelTwo randomQuestion={randomQuestion} two={two}/>}/>
+        <Route path="/two" element={< LevelThree randomQuestion={randomQuestion} three={three}/>}/>
       </Routes>
     </div>
   );
