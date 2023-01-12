@@ -1,10 +1,11 @@
 import React from 'react'
+import './LevelOne.css'
 
-const LevelOne = (question) => {
-  console.log('LEVEL ONE', question)
-
+const LevelOne = (levelOne) => {
   return (
-    <h4>here</h4>
+    <div className='level-card'>
+      <h4 className='randomQuestion'>{levelOne.levelOne}</h4>
+    </div>
   )
 }
 
