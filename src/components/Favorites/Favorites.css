@@ -1,4 +1,18 @@
-.deck {
+/* .deck {
   display: flex;
   justify-content: center;
+} */
+
+.deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
+/* 
+.level {
+  flex: 1;
+}  
+
+.flex-child:first-child {
+  margin-right: 2px;
+}  */
