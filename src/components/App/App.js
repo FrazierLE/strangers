@@ -1,15 +1,17 @@
 import './App.css';
 import React, { useState, useEffect } from 'react'
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, NavLink } from "react-router-dom"
 import fetchData from '../../apiCalls';
 import Home from '../Home/Home';
 import LevelOne from '../LevelOne/LevelOne' 
 import LevelTwo from '../LevelTwo/LevelTwo'
 import LevelThree from '../LevelThree/LevelThree'
+import Favorites from '../Favorites/Favorites';
 
 const App = () => {
   const [questions, setQuestions] = useState([])
   const [randomQuestion, setRandomQuestion] = useState('')
+  const [favorites, setFavorites] = useState([])
   let perception = [];
   let connection = [];
   let reflection = [];
@@ -25,7 +27,6 @@ const App = () => {
 
   const generateRandomQuestion = (level) => {
     const q = level[Math.floor(Math.random()*level.length)];
-    console.log('QU', q)
     setRandomQuestion(q)
   }
 
@@ -44,32 +45,21 @@ const App = () => {
     generateRandomQuestion(reflection)
   }
 
-  // const filterLevel = () => {
-  //   const level = questions.map(question => {
-  //     console.log('QUESTION', question)
-  //     if(question.level === 1) {
-  //       perception.push(question)
-  //     }
-  //     else if(question.level === 2) {
-  //       connection.push(question)
-  //     }
-  //     else if(question.level === 3) {
-  //       return question
-  //     }
-  //   })
-  //   generateRandomQuestion(perception)
-  //   generateRandomQuestion(connection)
-  //   generateRandomQuestion(reflection)
-  // }
-
   return (
     <div className="App">
       <h1>We're Not Really Strangers</h1>
+      <NavLink to='/'>
+        <button>Home</button>
+      </NavLink>
+      <NavLink to='/favorites'>
+        <button>Favorites</button>
+      </NavLink>
       <Routes>
         <Route path="/" element={< Home one={one} two={two} three={three}/>} />
         <Route path="/one" element={< LevelOne randomQuestion={randomQuestion} one={one}/>}/>
         <Route path="/two" element={< LevelTwo randomQuestion={randomQuestion} two={two}/>}/>
         <Route path="/two" element={< LevelThree randomQuestion={randomQuestion} three={three}/>}/>
+        <Route path="/favorites" element={<Favorites favorites={favorites}/>} />
       </Routes>
     </div>
   );

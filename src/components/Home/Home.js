@@ -1,8 +1,6 @@
 import React from 'react'
 import './Home.css'
 import { NavLink } from 'react-router-dom'
-import LevelOne from '../LevelOne/LevelOne'
-
 
 const Home = (props) => {
   return (
