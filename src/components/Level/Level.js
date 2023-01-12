@@ -1,8 +1,7 @@
 import React from 'react'
 import './LevelOne.css'
 
-const LevelOne = (props) => {
-  console.log('LEVEL ONE PROPS')
+const Level = (props) => {
   return (
     <div className='level-card'>
       <h4 className='randomQuestion'>{props.randomQuestion.question}</h4>
@@ -12,4 +11,4 @@ const LevelOne = (props) => {
   )
 }
 
-export default LevelOne
+export default Level
