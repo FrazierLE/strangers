@@ -45,6 +45,10 @@ const App = () => {
     generateRandomQuestion(reflection)
   }
 
+  const addToFavorites = (question) => {
+    setFavorites([...favorites, question])
+  }
+
   return (
     <div className="App">
       <h1>We're Not Really Strangers</h1>
@@ -56,9 +60,9 @@ const App = () => {
       </NavLink>
       <Routes>
         <Route path="/" element={< Home one={one} two={two} three={three}/>} />
-        <Route path="/one" element={< LevelOne randomQuestion={randomQuestion} one={one}/>}/>
-        <Route path="/two" element={< LevelTwo randomQuestion={randomQuestion} two={two}/>}/>
-        <Route path="/two" element={< LevelThree randomQuestion={randomQuestion} three={three}/>}/>
+        <Route path="/one" element={< LevelOne randomQuestion={randomQuestion} one={one} addToFavorites={addToFavorites}/>}/>
+        <Route path="/two" element={< LevelTwo randomQuestion={randomQuestion} two={two} addToFavorites={addToFavorites}/>}/>
+        <Route path="/two" element={< LevelThree randomQuestion={randomQuestion} three={three} addToFavorites={addToFavorites}/>}/>
         <Route path="/favorites" element={<Favorites favorites={favorites}/>} />
       </Routes>
     </div>
