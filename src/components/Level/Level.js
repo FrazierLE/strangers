@@ -2,7 +2,6 @@ import React from 'react'
 import './LevelOne.css'
 
 const Level = (props) => {
-  console.log('PROPS IN LEVEL', props.randomQuestion.level)
   return (
     <div className='level-card'>
       <h4 className='randomQuestion'>{props.randomQuestion.question}</h4>

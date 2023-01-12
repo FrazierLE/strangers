@@ -4,8 +4,6 @@ import { Routes, Route, NavLink } from "react-router-dom"
 import fetchData from '../../apiCalls';
 import Home from '../Home/Home';
 import Level from '../Level/Level' 
-// import LevelTwo from '../LevelTwo/LevelTwo'
-// import LevelThree from '../LevelThree/LevelThree'
 import Favorites from '../Favorites/Favorites';
 import NavBar from '../NavBar/NavBar';
 
