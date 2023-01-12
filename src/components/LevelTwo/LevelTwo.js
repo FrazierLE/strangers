@@ -1,10 +1,11 @@
 import React from 'react'
 
-const LevelTwo = (randomQuestion) => {
+const LevelTwo = (props) => {
   return (
     <div className='level-card'>
-      <h4 className='randomQuestion'>{randomQuestion.randomQuestion.question}</h4>
-      <button onClick={() => randomQuestion.two()}>Next Question</button>
+       <h4 className='randomQuestion'>{props.randomQuestion.question}</h4>
+      <button onClick={() => props.two()}>Next Question</button>
+      <button onClick={() => props.addToFavorites(props.randomQuestion)}>Save Question</button>
     </div>
   )
 }

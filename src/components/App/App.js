@@ -7,6 +7,7 @@ import LevelOne from '../LevelOne/LevelOne'
 import LevelTwo from '../LevelTwo/LevelTwo'
 import LevelThree from '../LevelThree/LevelThree'
 import Favorites from '../Favorites/Favorites';
+import NavBar from '../NavBar/NavBar';
 
 const App = () => {
   const [questions, setQuestions] = useState([])
@@ -51,18 +52,13 @@ const App = () => {
 
   return (
     <div className="App">
+      < NavBar />
       <h1>We're Not Really Strangers</h1>
-      <NavLink to='/'>
-        <button>Home</button>
-      </NavLink>
-      <NavLink to='/favorites'>
-        <button>Favorites</button>
-      </NavLink>
       <Routes>
         <Route path="/" element={< Home one={one} two={two} three={three}/>} />
         <Route path="/one" element={< LevelOne randomQuestion={randomQuestion} one={one} addToFavorites={addToFavorites}/>}/>
         <Route path="/two" element={< LevelTwo randomQuestion={randomQuestion} two={two} addToFavorites={addToFavorites}/>}/>
-        <Route path="/two" element={< LevelThree randomQuestion={randomQuestion} three={three} addToFavorites={addToFavorites}/>}/>
+        <Route path="/three" element={< LevelThree randomQuestion={randomQuestion} three={three} addToFavorites={addToFavorites}/>}/>
         <Route path="/favorites" element={<Favorites favorites={favorites}/>} />
       </Routes>
     </div>
