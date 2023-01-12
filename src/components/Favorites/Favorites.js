@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../Card/Card'
+import './Favorites.css'
 
 const Favorites = (props) => {
     const favCards = props.favorites.map(card => {
@@ -14,7 +15,7 @@ const Favorites = (props) => {
     })
   return (
     <div className='deck'>
-      {favCards}
+      {!props.favorites.length ? <h2>Sorry, you have no cards saved to your deck.</h2> : <div>{favCards}</div>}
     </div>
   )
 }

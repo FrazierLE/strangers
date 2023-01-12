@@ -5,7 +5,7 @@ const Card = ({ id, question, level }) => {
   return (
     <div className='favorite-card'>
       <h3>{question}</h3>
-      <p>Level {level}</p>
+      <span>Level {level}</span>
     </div>
   )
 }
