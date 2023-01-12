@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 import './NavBar.css'
 
 const NavBar = (props) => {
-  console.log('NAV', props)
   return(
     <nav className='nav-bar'>
     <NavLink to='/'>

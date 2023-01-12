@@ -11,4 +11,13 @@
     align-items: center;
     padding-bottom: 3rem;
     font-size: 2rem;
+    line-height: 2.5rem;
+}
+
+.delete {
+  border: 1px solid white;
+}
+
+span {
+  margin-top: -2rem;
 }

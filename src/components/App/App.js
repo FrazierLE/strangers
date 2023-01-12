@@ -46,7 +46,11 @@ const App = () => {
   }
 
   const addToFavorites = (question) => {
-    setFavorites([...favorites, question])
+    if(favorites.includes(question)) {
+      return favorites
+    } else {
+      setFavorites([...favorites, question])
+    }
   }
 
   const deleteFromFavorites = (id) => {
@@ -60,9 +64,9 @@ const App = () => {
       <h1>We're Not Really Strangers</h1>
       <Routes>
         <Route path="/" element={< Home one={one} two={two} three={three}/>} />
-        <Route path="/one" element={< Level level={level} randomQuestion={randomQuestion} one={one} addToFavorites={addToFavorites}/>}/>
-        <Route path="/two" element={< Level level={level} randomQuestion={randomQuestion} two={two} addToFavorites={addToFavorites}/>}/>
-        <Route path="/three" element={< Level level={level} randomQuestion={randomQuestion} three={three} addToFavorites={addToFavorites}/>}/>
+        <Route path="/one" element={< Level level={level} randomQuestion={randomQuestion} one={one} addToFavorites={addToFavorites} />}/>
+        <Route path="/two" element={< Level level={level} randomQuestion={randomQuestion} two={two} addToFavorites={addToFavorites} />}/>
+        <Route path="/three" element={< Level level={level} randomQuestion={randomQuestion} three={three} addToFavorites={addToFavorites} />}/>
         <Route path="/favorites" element={<Favorites favorites={favorites} deleteFromFavorites={deleteFromFavorites}/>} />
       </Routes>
     </div>
