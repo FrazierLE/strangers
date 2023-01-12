@@ -1,4 +1,5 @@
 import React from 'react'
+import './LevelTwo.css'
 
 const LevelTwo = (props) => {
   return (

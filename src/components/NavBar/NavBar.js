@@ -9,7 +9,7 @@ const NavBar = () => {
       <button>Home</button>
     </NavLink>
     <NavLink to='/favorites'>
-      <button>Favorites</button>
+      <button className='favorites'>Favorites</button>
     </NavLink>
   </nav>
   )
