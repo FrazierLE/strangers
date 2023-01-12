@@ -56,7 +56,7 @@ const App = () => {
 
   return (
     <div className="App">
-      < NavBar />
+      < NavBar favorites={favorites}/>
       <h1>We're Not Really Strangers</h1>
       <Routes>
         <Route path="/" element={< Home one={one} two={two} three={three}/>} />

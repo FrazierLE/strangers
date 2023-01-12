@@ -5,7 +5,8 @@
 }
 
 .favorites {
-  margin-left: 1rem
+  margin-left: 1rem;
+  width: 6.5rem;
 }
 
 button {
