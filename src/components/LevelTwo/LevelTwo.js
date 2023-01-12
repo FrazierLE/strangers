@@ -1,8 +1,10 @@
 import React from 'react'
 
-const LevelTwo = () => {
+const LevelTwo = (randomQuestion) => {
   return (
-    <h4>Level Two</h4>
+    <div className='level-card'>
+      <h4 className='randomQuestion'>{randomQuestion.randomQuestion}</h4>
+    </div>
   )
 }
 

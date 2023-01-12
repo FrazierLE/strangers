@@ -9,10 +9,7 @@ import LevelThree from '../LevelThree/LevelThree'
 
 const App = () => {
   const [questions, setQuestions] = useState([])
-  const [levelOne, setLevelOne] = useState('')
-  // const [levelTwo, setLevelTwo] = useState([])
-  // const [levelThree, setLevelThree] = useState([])
-  let randomQuestion
+  const [randomQuestion, setRandomQuestion] = useState('')
 
   const getData = () => {
     fetchData()
@@ -25,27 +22,22 @@ const App = () => {
 
   const generateRandomQuestion = (level) => {
     const q = level[Math.floor(Math.random()*level.length)];
-    console.log('RANDOMQUESTION', q)
-    randomQuestion = q.question
+    setRandomQuestion(q.question)
   }
 
   const one = () => {
     const perception = questions.filter(question => question.level === 1)
     generateRandomQuestion(perception)
-    setLevelOne(randomQuestion)
-    console.log('LEVEL ONE', levelOne)
   }
 
   const two = () => {
     const connection = questions.filter(question => question.level === 2)
-    // setLevelOne(connection)
-    // generateRandomQuestion(connection)
+    generateRandomQuestion(connection)
   }
 
   const three = () => {
     const reflection = questions.filter(question => question.level === 3)
-    // setLevelOne(reflection)
-    // generateRandomQuestion(reflection)
+    generateRandomQuestion(reflection)
   }
 
   return (
@@ -53,9 +45,9 @@ const App = () => {
       <h1>We're Not Really Strangers</h1>
       <Routes>
         <Route path="/" element={< Home one={one} two={two} three={three}/>} />
-        <Route path="/one" element={< LevelOne levelOne={levelOne}/>}/>
-        <Route path="/two" element={< LevelTwo />}/>
-        <Route path="/three" element={< LevelThree />}/>
+        <Route path="/one" element={< LevelOne randomQuestion={randomQuestion}/>}/>
+        <Route path="/two" element={< LevelTwo randomQuestion={randomQuestion}/>}/>
+        <Route path="/three" element={< LevelThree randomQuestion={randomQuestion}/>}/>
       </Routes>
     </div>
   );
