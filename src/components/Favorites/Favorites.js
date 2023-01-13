@@ -1,8 +1,23 @@
 import React from 'react'
+import Card from '../Card/Card'
+import './Favorites.css'
 
-const Favorites = () => {
+const Favorites = ({ favorites, deleteFromFavorites }) => {
+    const favCards = favorites.map(card => {
+      return (
+        <Card 
+          key={card.id}
+          id={card.id}
+          question={card.question}
+          level={card.level}
+          deleteFromFavorites={deleteFromFavorites}
+        />
+      )
+    })
   return (
-    <div>this is my favorites page</div>
+    <div className='deck'>
+      {!favorites.length ? <h2>Sorry, you have no cards saved to your deck.</h2> : <div className='deck'>{favCards}</div>}
+    </div>
   )
 }
 

@@ -1,0 +1,24 @@
+.favorite-card {
+    border: 1px solid black;
+    height: 16rem;
+    width: 30rem;
+    color: whitesmoke;
+    background-color: rgb(177, 36, 35);
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin: 1rem;
+}
+
+.delete {
+  border: 1px solid white;
+}
+
+span {
+  margin-top: -2rem;
+}
