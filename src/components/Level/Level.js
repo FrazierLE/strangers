@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Level.css'
+import PropTypes from 'prop-types'
 
 const Level = (props) => {
   return (
@@ -16,3 +17,10 @@ const Level = (props) => {
 }
 
 export default Level
+
+Level.propTypes = {
+  level: PropTypes.number,
+  randomQuestion: PropTypes.string,
+  three: PropTypes.func.isRequired,
+  addToFavorites: PropTypes.func.isRequired
+}

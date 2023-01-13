@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './NavBar.css'
+import PropTypes from 'prop-types'
 
 const NavBar = (props) => {
   return(
@@ -16,3 +17,7 @@ const NavBar = (props) => {
 }
 
 export default NavBar
+
+NavBar.propTypes = {
+  favorites: PropTypes.array.isRequired
+}

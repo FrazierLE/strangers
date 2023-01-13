@@ -1,6 +1,7 @@
 import React from 'react'
 import './Home.css'
 import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const Home = (props) => {
   return (
@@ -29,3 +30,9 @@ const Home = (props) => {
 }
 
 export default Home
+
+Home.propTypes = {
+  one: PropTypes.func.isRequired,
+  two: PropTypes.func.isRequired,
+  three: PropTypes.func.isRequired
+}
