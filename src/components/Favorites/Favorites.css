@@ -3,3 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.fav-message {
+  font-size: 3rem;
+}

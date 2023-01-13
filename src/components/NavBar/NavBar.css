@@ -6,12 +6,15 @@
 
 .favorites {
   margin-left: 1rem;
-  width: 6.5rem;
+  width: 8.5rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
 }
 
 button {
-  height: 1.5rem;
-  width: 5rem;
+  width: 8.5rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
   color: whitesmoke;
   background-color: rgb(177, 36, 35);
   border-radius: .5rem;

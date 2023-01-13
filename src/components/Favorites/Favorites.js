@@ -17,7 +17,7 @@ const Favorites = ({ favorites, deleteFromFavorites }) => {
     })
   return (
     <div className='deck'>
-      {!favorites.length ? <h2>Sorry, you have no cards saved to your deck.</h2> : <div className='deck'>{favCards}</div>}
+      {!favorites.length ? <h2 className='fav-message'>Sorry, you have no cards saved to your deck.</h2> : <div className='deck'>{favCards}</div>}
     </div>
   )
 }
