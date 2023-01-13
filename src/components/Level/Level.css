@@ -39,3 +39,10 @@
   justify-content: space-evenly;
   margin-bottom: 3rem;
 }
+
+@media screen and (max-width: 400px) {
+  .randomQuestion {
+    height: 20rem;;
+    width: 30rem;
+  }
+}

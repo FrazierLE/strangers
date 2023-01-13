@@ -23,3 +23,10 @@
 .navLink {
   text-decoration: none;
 }
+
+@media screen and (max-width: 600px) {
+  .levels {
+    flex-direction: column;
+    height: 50rem;
+  }
+}
