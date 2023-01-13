@@ -22,5 +22,17 @@ describe('Home page flows', () => {
     cy.get('.favorites').click()
     cy.location('pathname').should('eq', '/favorites')
     cy.get('h2').should('have.text', 'Sorry, you have no cards saved to your deck.')
+  });
+  it('Should go to level page one when level one div is clicked', () => {
+    cy.get('.level-one').click()
+    cy.location('pathname').should('eq', '/one')
+  });
+  it('Should go to level page two when level two div is clicked', () => {
+    cy.get('.level-two').click()
+    cy.location('pathname').should('eq', '/two')
+  });
+  it('Should go to level page three when level three div is clicked', () => {
+    cy.get('.level-three').click()
+    cy.location('pathname').should('eq', '/three')
   })
 });
