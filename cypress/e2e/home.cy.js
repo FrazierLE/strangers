@@ -17,8 +17,10 @@ describe('Home page flows', () => {
     cy.get('.level-three > h3').should('have.text', 'Level 3')
     cy.get('.level-three > span').should('have.text', 'Reflection')
   });
-  it('Should have a home button and a favorites button', () => {
-    cy.get('.active > button').should('have.text', 'Home')
+  it('Should have a favorites button and go to favorites page when clicked', () => {
     cy.get('.favorites').should('have.text', 'Favorites (0)')
+    cy.get('.favorites').click()
+    cy.location('pathname').should('eq', '/favorites')
+    cy.get('h2').should('have.text', 'Sorry, you have no cards saved to your deck.')
   })
 });
