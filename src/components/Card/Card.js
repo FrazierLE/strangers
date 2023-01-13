@@ -18,5 +18,5 @@ Card.propTypes = {
   id: PropTypes.number,
   question: PropTypes.string,
   level: PropTypes.number,
-  deleteFromFavorites: PropTypes.func.isRequired
+  deleteFromFavorites: PropTypes.func
 }

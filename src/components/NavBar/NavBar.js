@@ -19,5 +19,9 @@ const NavBar = (props) => {
 export default NavBar
 
 NavBar.propTypes = {
-  favorites: PropTypes.array.isRequired
+  favorites: PropTypes.array
 }
+
+//if on favorites page, then show home button.
+//if on level page, then show both buttons
+//if on home page, show favorites button

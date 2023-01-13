@@ -32,7 +32,7 @@ const Home = (props) => {
 export default Home
 
 Home.propTypes = {
-  one: PropTypes.func.isRequired,
-  two: PropTypes.func.isRequired,
-  three: PropTypes.func.isRequired
+  one: PropTypes.func,
+  two: PropTypes.func,
+  three: PropTypes.func
 }

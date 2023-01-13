@@ -3,6 +3,7 @@ import './Level.css'
 import PropTypes from 'prop-types'
 
 const Level = (props) => {
+  console.log('PROPS', props)
   return (
     <div className='level-card'>
       <h4 className='randomQuestion'>{props.randomQuestion.question}</h4>
@@ -19,8 +20,8 @@ const Level = (props) => {
 export default Level
 
 Level.propTypes = {
-  level: PropTypes.number,
-  randomQuestion: PropTypes.string,
-  three: PropTypes.func.isRequired,
-  addToFavorites: PropTypes.func.isRequired
+  level: PropTypes.array,
+  randomQuestion: PropTypes.any,
+  three: PropTypes.func,
+  addToFavorites: PropTypes.func
 }
