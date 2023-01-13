@@ -12,15 +12,17 @@ const App = () => {
   const [randomQuestion, setRandomQuestion] = useState('')
   const [favorites, setFavorites] = useState([])
   const [level, setLevel] = useState([])
+  const [error, setError] = useState('')
 
   const getData = () => {
     fetchData()
       .then(data => setQuestions(data))
+      .catch(err => setError(err))
   }
 
   useEffect(() => {
     getData()
-  }, [])
+  })
 
   const generateRandomQuestion = (level) => {
     const q = level[Math.floor(Math.random()*level.length)];
@@ -63,7 +65,7 @@ const App = () => {
       < NavBar favorites={favorites}/>
       <h1>We're Not Really Strangers</h1>
       <Routes>
-        <Route path="/" element={< Home one={one} two={two} three={three}/>} />
+      <Route path="/" element={error ? <h2>We are sorry, but something has gone wrong. Please try again later.</h2> : < Home one={one} two={two} three={three}/>}/>
         <Route path="/one" element={< Level level={level} randomQuestion={randomQuestion} one={one} addToFavorites={addToFavorites} />}/>
         <Route path="/two" element={< Level level={level} randomQuestion={randomQuestion} two={two} addToFavorites={addToFavorites} />}/>
         <Route path="/three" element={< Level level={level} randomQuestion={randomQuestion} three={three} addToFavorites={addToFavorites} />}/>
@@ -74,5 +76,3 @@ const App = () => {
 }
 
 export default App;
-
-//
