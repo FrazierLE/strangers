@@ -40,6 +40,8 @@ describe('Home page flows', () => {
     cy.get('.level-three').click()
     cy.location('pathname').should('eq', '/three')
     cy.get('.buttons > :nth-child(2)').click()
-    cy.get('.favorites').should('have.text', 'Favorites (1)')
+    cy.get('.favorites').should('have.text', 'Favorites (1)').click()
+    cy.get('.favorite-card')
+    cy.get('.delete').contains('X')
   });
 });
