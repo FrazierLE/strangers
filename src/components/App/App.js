@@ -22,7 +22,7 @@ const App = () => {
 
   useEffect(() => {
     getData()
-  })
+  }, [])
 
   const generateRandomQuestion = (level) => {
     const q = level[Math.floor(Math.random()*level.length)];
