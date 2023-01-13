@@ -1,4 +1,4 @@
-describe('Home page flows', () => {
+describe('User flows through the page', () => {
   beforeEach(() => {
     cy.intercept('http://localhost:3001/api/v1/strangers/', {
       method: 'GET',
@@ -21,6 +21,7 @@ describe('Home page flows', () => {
     cy.get('.favorites').should('have.text', 'Favorites (0)')
     cy.get('.favorites').click()
     cy.location('pathname').should('eq', '/favorites')
+    cy.get('h1').should('have.text', "We're Not Really Strangers")
     cy.get('h2').should('have.text', 'Sorry, you have no cards saved to your deck.')
   });
   it('Should go to level page one when level one div is clicked', () => {
@@ -28,6 +29,9 @@ describe('Home page flows', () => {
     cy.get('.favorites').should('have.text', 'Favorites (0)')
     cy.get('.level-one').click()
     cy.location('pathname').should('eq', '/one')
+    cy.get('.randomQuestion')
+    cy.get('.buttons > :nth-child(1)').should('have.text', 'Next Question')
+    cy.get('.buttons > :nth-child(2)').should('have.text', 'Save Question')
   });
   it('Should go to level page two when level two div is clicked', () => {
     cy.get('[href="/"] > button').should('have.text', 'Home')
