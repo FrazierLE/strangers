@@ -67,10 +67,10 @@ const App = () => {
       <h1>We're Not Really Strangers</h1>
       <Routes>
       <Route path="/" element={error ? <h2 className='error-message'>We are sorry, but something has gone wrong. Please try again later.</h2> : < Home one={one} two={two} three={three}/>}/>
-        <Route path="/one" element={< Level level={level} randomQuestion={randomQuestion} one={one} addToFavorites={addToFavorites} />}/>
-        <Route path="/two" element={< Level level={level} randomQuestion={randomQuestion} two={two} addToFavorites={addToFavorites} />}/>
-        <Route path="/three" element={< Level level={level} randomQuestion={randomQuestion} three={three} addToFavorites={addToFavorites} />}/>
-        <Route path="/favorites" element={<Favorites favorites={favorites} deleteFromFavorites={deleteFromFavorites}/>} />
+        <Route path="/one" element={< Level level={level} randomQuestion={randomQuestion} one={one} two={two} three={three} addToFavorites={addToFavorites} location={location}/>}/>
+        <Route path="/two" element={< Level level={level} randomQuestion={randomQuestion} one={one} two={two} three={three} addToFavorites={addToFavorites} location={location}/>}/>
+        <Route path="/three" element={< Level level={level} randomQuestion={randomQuestion} one={one} two={two} three={three} addToFavorites={addToFavorites} location={location}/>}/>
+        <Route path="/favorites" element={< Favorites favorites={favorites} deleteFromFavorites={deleteFromFavorites}/>} />
       </Routes>
     </div>
   );
