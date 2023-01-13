@@ -3,7 +3,6 @@ import './Level.css'
 import PropTypes from 'prop-types'
 
 const Level = (props) => {
-  console.log('PROPS', props)
   return (
     <div className='level-card'>
       <h4 className='randomQuestion'>{props.randomQuestion.question}</h4>

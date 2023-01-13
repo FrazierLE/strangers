@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react'
-import { Routes, Route, NavLink } from "react-router-dom"
+import { Routes, Route, useLocation } from "react-router-dom"
 import fetchData from '../../apiCalls';
 import Home from '../Home/Home';
 import Level from '../Level/Level' 
@@ -13,6 +13,7 @@ const App = () => {
   const [favorites, setFavorites] = useState([])
   const [level, setLevel] = useState([])
   const [error, setError] = useState('')
+  let location = useLocation()
 
   const getData = () => {
     fetchData()
@@ -62,7 +63,7 @@ const App = () => {
 
   return (
     <div className="App">
-      < NavBar favorites={favorites}/>
+      < NavBar favorites={favorites} location={location}/>
       <h1>We're Not Really Strangers</h1>
       <Routes>
       <Route path="/" element={error ? <h2>We are sorry, but something has gone wrong. Please try again later.</h2> : < Home one={one} two={two} three={three}/>}/>

@@ -4,7 +4,6 @@ import './Favorites.css'
 import PropTypes from 'prop-types'
 
 const Favorites = ({ favorites, deleteFromFavorites }) => {
-  // console.log('WHAT IS THIS', favorites.location.pathname)
     const favCards = favorites.map(card => {
       return (
         <Card 

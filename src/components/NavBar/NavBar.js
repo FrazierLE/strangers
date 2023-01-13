@@ -6,12 +6,27 @@ import PropTypes from 'prop-types'
 const NavBar = (props) => {
   return(
     <nav className='nav-bar'>
-    <NavLink to='/'>
-      <button>Home</button>
-    </NavLink>
-    <NavLink to='/favorites'>
-      <button className='favorites'>Favorites ({props.favorites.length})</button>
-    </NavLink>
+      {props.location.pathname === '/' && 
+      <div className='nav-bar'>
+        <NavLink to='/favorites'>
+          <button className='favorites'>Favorites ({props.favorites.length})</button>
+        </NavLink>
+      </div> }
+      {props.location.pathname === '/favorites' && 
+      <div className='nav-bar'>
+        <NavLink to='/'>
+          <button>Home</button>
+        </NavLink> 
+      </div>}
+    {(props.location.pathname === '/one' || props.location.pathname === '/two' || props.location.pathname === '/three') && 
+      <div className='nav-bar'>
+        <NavLink to='/'>
+          <button>Home</button>
+        </NavLink>
+        <NavLink to='/favorites'>
+          <button className='favorites'>Favorites ({props.favorites.length})</button>
+        </NavLink>
+      </div>}
   </nav>
   )
 }
@@ -19,9 +34,6 @@ const NavBar = (props) => {
 export default NavBar
 
 NavBar.propTypes = {
-  favorites: PropTypes.array
+  favorites: PropTypes.array,
+  location: PropTypes.object
 }
-
-//if on favorites page, then show home button.
-//if on level page, then show both buttons
-//if on home page, show favorites button
