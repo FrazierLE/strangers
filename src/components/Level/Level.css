@@ -42,13 +42,16 @@
 
 .change-levels {
   display: flex;
-  width: 90rem;
+  width: 45rem;
   justify-content: space-between;
 }
 
 @media screen and (max-width: 400px) {
   .randomQuestion {
     height: 20rem;;
+    width: 30rem;
+  }
+  .change-levels {
     width: 30rem;
   }
 }
