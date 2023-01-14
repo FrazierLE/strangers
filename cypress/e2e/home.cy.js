@@ -34,17 +34,32 @@ describe('User flows through the page', () => {
     cy.get('.level-one').click()
     cy.location('pathname').should('eq', '/one')
     cy.get('.randomQuestion')
+    //INSERT RANDOM FUNCTIONALITY HERE
     cy.get('.buttons > :nth-child(1)').should('have.text', 'Next Question')
     cy.get('.buttons > :nth-child(2)').should('have.text', 'Save Question')
+    cy.get('[href="/two"] > button').should('have.text', 'Level Two')
+    cy.get('[href="/three"] > button').should('have.text', 'Level Three')
   });
   it('Should go to level page two when level two div is clicked', () => {
     cy.get('.favorites').should('have.text', 'Favorites (0)')
     cy.get('.level-two').click()
     cy.location('pathname').should('eq', '/two')
+    cy.get('.randomQuestion')
+    //INSERT RANDOM FUNCTIONALITY HERE
+    cy.get('.buttons > :nth-child(1)').should('have.text', 'Next Question')
+    cy.get('.buttons > :nth-child(2)').should('have.text', 'Save Question')
+    cy.get('[href="/one"] > button').should('have.text', 'Level One')
+    cy.get('[href="/three"] > button').should('have.text', 'Level Three')
   });
   it('Should go to level page three when level three div is clicked', () => {
     cy.get('.level-three').click()
     cy.location('pathname').should('eq', '/three')
+    cy.get('.randomQuestion')
+    //INSERT RANDOM FUNCTIONALITY HERE
+    cy.get('.buttons > :nth-child(1)').should('have.text', 'Next Question')
+    cy.get('.buttons > :nth-child(2)').should('have.text', 'Save Question')
+    cy.get('[href="/two"] > button').should('have.text', 'Level Two')
+    cy.get('[href="/one"] > button').should('have.text', 'Level One')
     cy.get('.buttons > :nth-child(2)').click()
     cy.get('.favorites').should('have.text', 'Favorites (1)').click()
     cy.get('.favorite-card')
