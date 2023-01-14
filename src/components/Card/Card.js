@@ -1,5 +1,6 @@
 import React from 'react'
 import './Card.css'
+import PropTypes from 'prop-types'
 
 const Card = ({ id, question, level, deleteFromFavorites }) => {
   return (
@@ -12,3 +13,10 @@ const Card = ({ id, question, level, deleteFromFavorites }) => {
 }
 
 export default Card
+
+Card.propTypes = {
+  id: PropTypes.number,
+  question: PropTypes.string,
+  level: PropTypes.number,
+  deleteFromFavorites: PropTypes.func
+}
