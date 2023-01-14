@@ -6,6 +6,7 @@ import Home from '../Home/Home';
 import Level from '../Level/Level' 
 import Favorites from '../Favorites/Favorites';
 import NavBar from '../NavBar/NavBar';
+import Error from '../Error/Error';
 
 const App = () => {
   const [questions, setQuestions] = useState([])
@@ -18,7 +19,10 @@ const App = () => {
   const getData = () => {
     fetchData()
       .then(data => setQuestions(data))
-      .catch(err => setError(err))
+      .catch(err => {
+        console.log(err)
+        setError('We are sorry, but something has gone wrong. Please try again later.')
+      })
   }
 
   useEffect(() => {
@@ -71,6 +75,7 @@ const App = () => {
         <Route path="/two" element={< Level level={level} randomQuestion={randomQuestion} one={one} two={two} three={three} addToFavorites={addToFavorites} location={location}/>}/>
         <Route path="/three" element={< Level level={level} randomQuestion={randomQuestion} one={one} two={two} three={three} addToFavorites={addToFavorites} location={location}/>}/>
         <Route path="/favorites" element={< Favorites favorites={favorites} deleteFromFavorites={deleteFromFavorites}/>} />
+        <Route path="*" element={< Error error={error}/>}/>
       </Routes>
     </div>
   );
