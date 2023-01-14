@@ -1,8 +1,12 @@
+const qOne = ["What was your first impression of me?", "What do you think is the hardest part of what I do for a living"]
+const qTwo = ["What question did this year leave you with?","What about yourself is hardest to admit?"]
+const qThree = ["If we were in a band, what would our name be?","Based on what you learned about me, does my social media accurately reflect who I am? Why or why not?"]
+
 describe('User flows through the page', () => {
   beforeEach(() => {
     cy.intercept('http://localhost:3001/api/v1/strangers/', {
       method: 'GET',
-      fixture: 'questions.json'
+      fixture: '../fixtures/questions.json'
     });
     cy.visit('http://localhost:3000/')
   });
@@ -33,8 +37,13 @@ describe('User flows through the page', () => {
     cy.get('.favorites').should('have.text', 'Favorites (0)')
     cy.get('.level-one').click()
     cy.location('pathname').should('eq', '/one')
-    cy.get('.randomQuestion')
-    //INSERT RANDOM FUNCTIONALITY HERE
+    cy.get('.randomQuestion').then(($randomQuestion) => {
+      if ($randomQuestion.text().includes(qOne[0])) {
+        cy.get('.randomQuestion').should('contain.text', qOne[0])
+      } else {
+        cy.get('.randomQuestion').should('contain.text', qOne[1])
+      }
+    })
     cy.get('.buttons > :nth-child(1)').should('have.text', 'Next Question')
     cy.get('.buttons > :nth-child(2)').should('have.text', 'Save Question')
     cy.get('[href="/two"] > button').should('have.text', 'Level Two')
@@ -44,8 +53,13 @@ describe('User flows through the page', () => {
     cy.get('.favorites').should('have.text', 'Favorites (0)')
     cy.get('.level-two').click()
     cy.location('pathname').should('eq', '/two')
-    cy.get('.randomQuestion')
-    //INSERT RANDOM FUNCTIONALITY HERE
+    cy.get('.randomQuestion').then(($randomQuestion) => {
+      if ($randomQuestion.text().includes(qTwo[0])) {
+        cy.get('.randomQuestion').should('contain.text', qTwo[0])
+      } else {
+        cy.get('.randomQuestion').should('contain.text', qTwo[1])
+      }
+    })
     cy.get('.buttons > :nth-child(1)').should('have.text', 'Next Question')
     cy.get('.buttons > :nth-child(2)').should('have.text', 'Save Question')
     cy.get('[href="/one"] > button').should('have.text', 'Level One')
@@ -54,16 +68,26 @@ describe('User flows through the page', () => {
   it('Should go to level page three when level three div is clicked', () => {
     cy.get('.level-three').click()
     cy.location('pathname').should('eq', '/three')
-    cy.get('.randomQuestion')
-    //INSERT RANDOM FUNCTIONALITY HERE
+    cy.get('.randomQuestion').then(($randomQuestion) => {
+      if ($randomQuestion.text().includes(qThree[0])) {
+        cy.get('.randomQuestion').should('contain.text', qThree[0])
+      } else {
+        cy.get('.randomQuestion').should('contain.text', qThree[1])
+      }
+    })
     cy.get('.buttons > :nth-child(1)').should('have.text', 'Next Question')
     cy.get('.buttons > :nth-child(2)').should('have.text', 'Save Question')
     cy.get('[href="/two"] > button').should('have.text', 'Level Two')
     cy.get('[href="/one"] > button').should('have.text', 'Level One')
     cy.get('.buttons > :nth-child(2)').click()
     cy.get('.favorites').should('have.text', 'Favorites (1)').click()
-    cy.get('.favorite-card')
-    //INSERT RANDOM FUNCTIONALITY HERE
+    cy.get('.favorite-card').then(($favorite_card) => {
+      if ($favorite_card.text().includes(qThree[0])) {
+        cy.get('.favorite-card').should('contain.text', qThree[0])
+      } else {
+        cy.get('.favorite-card').should('contain.text', qThree[1])
+      }
+    })
     cy.get('.delete').contains('X')
   });
 });

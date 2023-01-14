@@ -1,8 +1,10 @@
+const qOne = ["What was your first impression of me?", "What do you think is the hardest part of what I do for a living"]
+
 describe('User flows through the page', () => {
   beforeEach(() => {
     cy.intercept('http://localhost:3001/api/v1/strangers/', {
       method: 'GET',
-      fixture: 'questions.json'
+      fixture: '../fixtures/questions.json'
     });
     cy.visit('http://localhost:3000/favorites')
   });
@@ -27,7 +29,13 @@ describe('User flows through the page', () => {
       .and('contain', 'The second is how you win.')
     cy.get('.level-one').click()
     cy.location('pathname').should('eq', '/one')
-    cy.get('.randomQuestion')
+    cy.get('.randomQuestion').then(($randomQuestion) => {
+      if ($randomQuestion.text().includes(qOne[0])) {
+        cy.get('.randomQuestion').should('contain.text', qOne[0])
+      } else {
+        cy.get('.randomQuestion').should('contain.text', qOne[1])
+      }
+    })
     cy.get('[href="/two"] > button').should('have.text', 'Level Two')
     cy.get('[href="/three"] > button').should('have.text', 'Level Three')
     cy.get('.buttons > :nth-child(1)').should('have.text', 'Next Question')
@@ -36,8 +44,13 @@ describe('User flows through the page', () => {
     cy.get('.favorites').should('have.text', 'Favorites (1)').click()
     cy.location('pathname').should('eq', '/favorites')
     cy.get('[href="/"] > button').should('have.text', 'Home')
-    cy.get('.favorite-card')
-    //INSERT RANDOM FUNCTIONALITY HERE
+    cy.get('.favorite-card').then(($favorite_card) => {
+      if ($favorite_card.text().includes(qOne[0])) {
+        cy.get('.favorite-card').should('contain.text', qOne[0])
+      } else {
+        cy.get('.favorite-card').should('contain.text', qOne[1])
+      }
+    })
     cy.get('.delete').contains('X')
     cy.get('.delete').contains('X').click()
     cy.get('h2').should('have.text', 'Sorry, you have no cards saved to your deck.')
