@@ -37,6 +37,8 @@ export default Level
 Level.propTypes = {
   level: PropTypes.array,
   randomQuestion: PropTypes.any,
+  one: PropTypes.func,
+  two: PropTypes.func,
   three: PropTypes.func,
   addToFavorites: PropTypes.func,
   location: PropTypes.object
