@@ -29,11 +29,7 @@ We're Not Really Strangers is a web application inspired by the card game "We're
 * Express
 
 ### Project Goals
-1. Use the technology learned in this module to demonstrate mastery of the following:
-  ** React
-  ** Router
-  ** Asynchronous JavaScript
-  ** End to end testing with Cypress
+1. Use the technology learned in this module to demonstrate mastery of the following: React, Router, Asynchronous JavaScript, End to end testing with Cypress
 1. Create personas and user stories to describe the target audience.
 1. Allow the users to store/manipulate data displayed in the apllication from the API
 1. Create a multiple page web app
