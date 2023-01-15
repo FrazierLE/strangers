@@ -3,6 +3,7 @@
 ## Overview
 We're Not Really Strangers is a web application inspired by the card game "We're Not Really Strangers". We're Not Really Strangers is designed to deepen relational connections by encouraging emotional vulnerability through meaningful conversations.
 ### Preview
+![WNRS](https://user-images.githubusercontent.com/108101979/212553322-7ae4e623-7cfa-443a-8e12-bf0eec529469.gif)
 
 ### Set Up
 1. Fork + clone down this repo in your terminal.
