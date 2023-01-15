@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# We're Not Really Strangers
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+We're Not Really Strangers is a web application inspired by the card game "We're Not Really Strangers". We're Not Really Strangers is designed to deepen relational connections by encouraging emotional vulnerability through meaningful conversations.
+### Preview
 
-## Available Scripts
+### Set Up
+1. Fork + clone down this repo in your terminal.
+1. cd into the directory `strangers`
+1. Run `npm install` to install dependencies for the repo.
+1. Clone down this [backend repo]('https://github.com/FrazierLE/strangers-api') in a separate tab in your terminal. Follow directions in backend README.md
+1. Run `npm start` to start up your React server in `strangers` directory.
+1. Run `npm run cypress` to start up the Cypress testing server.
 
-In the project directory, you can run:
+### Deployed Link
+1. Frontend: 
+1. Backend: Clone down this [backend repo]('https://github.com/FrazierLE/strangers-api') in your terminal. 
+* Follow directions in backend README.md
 
-### `npm start`
+## Technologies Used
+* React
+* React Router
+* XML
+* CSS
+* Cypress
+* npm
+* webpack
+* Node.js
+* Express
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Project Goals
+1. Use the technology learned in this module to demonstrate mastery of the following:
+  * React
+  * Router
+  * Asynchronous JavaScript
+  * End to end testing with Cypress
+1. Create personas and user stories to describe the target audience.
+1. Allow the users to store/manipulate data displayed in the apllication from the API
+1. Create a multiple page web app
+1. Deploy application
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Wins
+* Create my own API through express and node.js
+* Using React Router 6 to create a multi-page application
+* OOP with functional components
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Future Extensions
+* Allow user to add and delete their own questions
+* Create a user login page
