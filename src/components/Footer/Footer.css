@@ -3,9 +3,9 @@
   margin-top: -7rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 400px) {
   .rules {
     font-size: 2.5rem;
-    margin-top: 1.25rem;
+    margin-top: 2rem;
   }
 }
