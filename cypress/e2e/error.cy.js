@@ -1,6 +1,6 @@
 describe('Error flows', () => {
   it('Should have a error message when a server error occurs', () => {
-    cy.intercept('http://localhost:3001/api/v1/strangers/', {
+    cy.intercept('https://strangers-api-lhr3.vercel.app/api/v1/strangers/', {
     method: 'GET',
     fixture: ''
   });
@@ -8,7 +8,7 @@ describe('Error flows', () => {
     cy.get('.error-message').should('contain', 'We are sorry, but something has gone wrong. Please try again later.')
   })
   it('Should have a title when a bad url is given', () => {
-    cy.intercept('http://localhost:3001/api/v1/strangers/', {
+    cy.intercept('https://strangers-api-lhr3.vercel.app/api/v1/strangers/', {
       method: 'GET',
       fixture: '../fixtures/questions.json'
     });
