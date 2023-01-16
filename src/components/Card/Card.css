@@ -27,5 +27,6 @@ span {
   .favorite-card {
     height: 10rem;;
     width: 20rem;
+    font-size: 1.75rem;
   }
 }
