@@ -12,7 +12,7 @@
 }
 
 button {
-  width: 8.5rem;
+  width: max-content;
   height: 2.5rem;
   font-size: 1.25rem;
   color: whitesmoke;
