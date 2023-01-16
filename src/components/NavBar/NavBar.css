@@ -6,7 +6,7 @@
 
 .favorites {
   margin-left: 1rem;
-  width: 10rem;
+  width: max-content;
   height: 2.5rem;
   font-size: 1.25rem;
 }
