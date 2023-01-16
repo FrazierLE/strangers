@@ -14,7 +14,7 @@ We're Not Really Strangers is a web application inspired by the card game "We're
 1. Run `npm run cypress` to start up the Cypress testing server.
 
 ### Deployed Link
-[We're Not Really Strangers](https://strangers-6wf08uct2-frazierle.vercel.app/)
+[We're Not Really Strangers](https://strangers-five.vercel.app)
 
 ## Technologies Used
 * React
