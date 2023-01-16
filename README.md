@@ -9,12 +9,12 @@ We're Not Really Strangers is a web application inspired by the card game "We're
 1. Fork + clone down this repo in your terminal.
 1. cd into the directory `strangers`
 1. Run `npm install` to install dependencies for the repo.
-1. Clone down this [backend repo]('https://github.com/FrazierLE/strangers-api') in a separate tab in your terminal. Follow directions in backend README.md
+1. Clone down this [backend repo](https://github.com/FrazierLE/strangers-api) in a separate tab in your terminal. Follow directions in backend README.md
 1. Run `npm start` to start up your React server in `strangers` directory.
 1. Run `npm run cypress` to start up the Cypress testing server.
 
 ### Deployed Link
-1. Frontend: [We're Not Really Strangers]('https://strangers-6wf08uct2-frazierle.vercel.app/')
+1. Frontend: [We're Not Really Strangers](https://strangers-6wf08uct2-frazierle.vercel.app/)
 
 ## Technologies Used
 * React
