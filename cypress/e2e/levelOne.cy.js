@@ -3,7 +3,7 @@ const qTwo = ["What question did this year leave you with?","What about yourself
 
 describe('User flows through the page', () => {
   beforeEach(() => {
-    cy.intercept('http://localhost:3001/api/v1/strangers/', {
+    cy.intercept('https://strangers-api-lhr3.vercel.app/api/v1/strangers/', {
       method: 'GET',
       fixture: '../fixtures/questions.json'
     });

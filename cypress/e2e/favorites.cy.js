@@ -2,7 +2,7 @@ const qOne = ["What was your first impression of me?", "What do you think is the
 
 describe('User flows through the page', () => {
   beforeEach(() => {
-    cy.intercept('http://localhost:3001/api/v1/strangers/', {
+    cy.intercept('https://strangers-api-lhr3.vercel.app/api/v1/strangers/', {
       method: 'GET',
       fixture: '../fixtures/questions.json'
     });
