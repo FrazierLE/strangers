@@ -50,8 +50,10 @@
   .randomQuestion {
     height: 20rem;;
     width: 30rem;
+    font-size: 1.75rem;
   }
   .change-levels {
     width: 30rem;
+    margin: 1rem;
   }
 }
